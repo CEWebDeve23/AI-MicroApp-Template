@@ -1,3 +1,4 @@
+
 APP_TITLE = "Zodiac Symbol"
 APP_INTRO = """This is a demonstration app that determines a users zodiac symbol based on their birth month and date. 
 """
@@ -36,12 +37,23 @@ PHASES = {
                 "label": """What is your birth day?""",
                 "min_value": 1,
                 "max_value":31
-            }
+            },
+            "year": {
+                "type": "number_input",
+                "label": """What is your birth year?""",
+                "min_value": 1900,
+                "max_value":2020
+            },
+            "system": {
+                "type": "selectbox",
+                "label": """Astrology System""",
+                "options": ["Western","Chinese"],
+            },
 
 
         },
         "phase_instructions": "",
-        "user_prompt": "My name is {name}. I was born on {month} {day}. Please provide me my zodiac symbol, and give a short horoscope for the day.",
+        "user_prompt": "My name is {name}. I was born on {month} {day}, {year}. Please provide me my zodiac symbol, and give a short horoscope for the day, according to the {system} astrology system.",
         "ai_response": True,
         "allow_skip": True,
         "show_prompt": True,
@@ -152,4 +164,3 @@ DISPLAY_COST = True
 
 COMPLETION_MESSAGE = "You've reached the end! I hope you learned something!"
 COMPLETION_CELEBRATION = False
-
